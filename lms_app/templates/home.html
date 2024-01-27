@@ -1,0 +1,22 @@
+<!-- templates/home.html -->
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<html style="overflow: hidden;">
+    <div style="background-image: url('{{ url_for('static', filename='images/lib.jpg') }}'); height: 100vh; background-size: cover; display: flex; flex-direction: column; align-items: center; text-align: center; padding-top: 20px;">
+        <h1 style="color: white; font-size: 6em;">Shiksha Library</h1>
+        
+        <div style="display: flex; justify-content: space-between; width: 6%; position: absolute; bottom: 25%;">
+            <!-- User icon on the left with a link to user.html -->
+            <a href="{{ url_for('views.user_login_redirect') }}" style="cursor: pointer;">
+                <i class="fa fa-user fa-5x" style="color: white; align-self: flex-end; margin-right: 10px;"></i>
+            </a>
+
+            <!-- Librarian icon on the right -->
+            <i class="fa fa-user-secret fa-5x" style="color: white; align-self: flex-end; margin-left: 10px;"></i>
+        </div>
+    </div>
+</html>
+{% endblock %}

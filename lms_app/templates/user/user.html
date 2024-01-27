@@ -1,0 +1,61 @@
+<!-- templates/user/user.html -->
+{% extends "base.html" %}
+
+{% block title %}User Login{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Login Section -->
+            <div class="col-md-6 text-white">
+                <h2>User Login</h2>
+                <form action="{{ url_for('auth.user_login') }}" method="POST">
+                    <!-- Add your login form fields (e.g., username and password) here -->
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" class="form-control" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+
+            <!-- Vertical Divider -->
+            <div class="col-md-1 border-right"></div>
+
+            <!-- Signup Section -->
+            <div class="col-md-5 text-white">
+                <h2>User Signup</h2>
+                <form action="{{ url_for('auth.user_signup') }}" method="POST">
+                    <!-- Add your signup form fields here -->
+                    <div class="form-group">
+                        <label for="signup_username">Username:</label>
+                        <input type="text" id="signup_username" name="signup_username" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="full_name">Full Name:</label>
+                        <input type="text" id="full_name" name="full_name" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signup_password">Password:</label>
+                        <input type="password" id="signup_password" name="signup_password" class="form-control" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Signup</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
